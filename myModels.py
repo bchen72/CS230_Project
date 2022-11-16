@@ -1,6 +1,8 @@
 import numpy as np
 import tensorflow as tf
 
+from Attention import Attention
+
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.initializers import glorot_normal
 from tensorflow.keras.regularizers import L2
@@ -84,6 +86,9 @@ def get_lstm_model(input_dim, output_dim, nHiddenLayers, nHUnits, learning_r,
     else:
         model.add(LSTM(units=nHUnits, input_shape = (None, input_dim),
                        return_sequences=True))
+   
+    # Custom Attention layer
+    model.add(Attention(return_sequences=True))
     # Hidden layers.
     if nHiddenLayers > 0:
         for i in range(nHiddenLayers):

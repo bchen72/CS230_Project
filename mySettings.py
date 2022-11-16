@@ -44,6 +44,6 @@ def get_lstm_settings(a):
              "noise_magnitude": 0.018,
              "noise_type": "per_timestep",
              'nRotations': 1,
-             'bidirectional': False}}
+             'bidirectional': True}}
         
     return settings[str(a)]
