@@ -1,5 +1,7 @@
 # CS-230: Human body marker augmentation
 
+This project was built upon Dr. Antoine Falisse's repo at https://github.com/antoinefalisse/augmenter-cs230/tree/599cba14046dfbe7d9471c5b2ed328c0b8fe3522
+
 ### Install requirements (see docker below too)
 1. Install [Anaconda](https://www.anaconda.com/)
 2. Clone the repository to your machine.
