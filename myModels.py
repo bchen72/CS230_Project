@@ -80,11 +80,11 @@ def get_lstm_model(input_dim, output_dim, nHiddenLayers, nHUnits, learning_r,
     model = Sequential()
     # First layer.
     if bidirectional:
-        model.add(Bidirectional(LSTM(units=nHUnits, 
+        model.add(Bidirectional(LSTM(units=47, 
                                      input_shape=(None, input_dim),
                                      return_sequences=True)))
     else:
-        model.add(LSTM(units=nHUnits, input_shape = (None, input_dim),
+        model.add(LSTM(units=47, input_shape = (None, input_dim),
                        return_sequences=True))
    
     # Custom Attention layer
@@ -97,6 +97,10 @@ def get_lstm_model(input_dim, output_dim, nHiddenLayers, nHUnits, learning_r,
                                              return_sequences=True)))
             else:
                 model.add(LSTM(units=nHUnits, return_sequences=True))
+    
+    # Custom Attention layer
+    #model.add(Attention(return_sequences=True))
+
     # Last layer.    
     model.add(TimeDistributed(Dense(output_dim, activation='linear')))
     

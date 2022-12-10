@@ -563,6 +563,19 @@ if evaluateValidation:
                                            "rmse_ind_max": rmse_noise_ind_max,
                                            "rmse_ind_max_marker": rmse_noise_ind_max_marker}
         
+    
+
+    # Save attention score
+    input_attention = valFeatures_all[0, :, :].reshape((1,30,47))
+    lstm_layer = model.layers[0]
+    attention_layer = model.layers[1]
+
+    lstm_output = lstm_layer(input_attention)
+    attention_output = attention_layer(lstm_output)
+
+    np.save('attention', attention_output)
+
+
     # Get various metrics for validation set.    
     _, val_rmse = getMetrics(valFeatures_all, valResponses_all, model)
     # To get the real rmse, ie in m, we need to un-normalize by height.

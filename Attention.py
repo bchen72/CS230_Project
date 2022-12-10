@@ -9,7 +9,7 @@ class Attention(Layer):
         
     def build(self, input_shape):
         
-        self.W=self.add_weight(name="att_weight", shape=(input_shape[-1],1),
+        self.W=self.add_weight(name="att_weight", shape=(input_shape[-1],input_shape[-1]),
                                initializer="normal")
         self.b=self.add_weight(name="att_bias", shape=(input_shape[1],1),
                                initializer="zeros")
