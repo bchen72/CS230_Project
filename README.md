@@ -2,6 +2,9 @@
 
 This project was built upon Dr. Antoine Falisse's repo at https://github.com/antoinefalisse/augmenter-cs230/tree/599cba14046dfbe7d9471c5b2ed328c0b8fe3522
 
+### Train and evaluate the model
+After downloading the dataset and configuring your environment as instructed below, simply run the train_evalLSTM.py file 
+
 ### Loss figures and attention heatmap
 The loss figures and the attention heatmap are stored in the figures directory
 
