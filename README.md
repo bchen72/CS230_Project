@@ -2,6 +2,12 @@
 
 This project was built upon Dr. Antoine Falisse's repo at https://github.com/antoinefalisse/augmenter-cs230/tree/599cba14046dfbe7d9471c5b2ed328c0b8fe3522
 
+### Loss figures and attention heatmap
+The loss figures and the attention heatmap are stored in the figures directory
+
+### Model results
+The model performance on the evaluation set are screenshot and stored in the results directory
+
 ### Attention output
 The attention outputs are stored in the Attention_Output folder. Each npy file contains a (1,30,94) dimensional np.array.
 94 comes from the biLSTM model, and we can average the forward and backward LSTM output to 47 to match the number of input features. From here, the first 45 features represents the contribution from x,y,z coordinates of the 15 input markers, and 
