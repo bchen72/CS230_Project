@@ -2,6 +2,11 @@
 
 This project was built upon Dr. Antoine Falisse's repo at https://github.com/antoinefalisse/augmenter-cs230/tree/599cba14046dfbe7d9471c5b2ed328c0b8fe3522
 
+### Attention output
+The attention outputs are stored in the Attention_Output folder. Each npy file contains a (1,30,94) dimensional np.array.
+94 comes from the biLSTM model, and we can average the forward and backward LSTM output to 47 to match the number of input features. From here, the first 45 features represents the contribution from x,y,z coordinates of the 15 input markers, and 
+we can sum them up and normalize to obtain the attention contribution of each of the 15 markers.
+
 ### Install requirements (see docker below too)
 1. Install [Anaconda](https://www.anaconda.com/)
 2. Clone the repository to your machine.
